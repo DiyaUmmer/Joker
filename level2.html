@@ -29,37 +29,31 @@
   </style>
 </head>
 <body>
-
-  <div id="hiddenText">I forgot my sweetheart's name. Do you remember that?</div>
+  <div id="hiddenText">I forgot my sweetheart's name. Do you remember that</div>
 
   <div id="answerBox">
     <input type="text" id="answer" placeholder="Type your answer here..." />
-    <button id="submitBtn">Submit</button>
+    <button onclick="checkAnswer()">Submit</button>
     <p id="result"></p>
   </div>
 
   <script>
-    // Reveal hidden text and input box
     document.body.addEventListener("mousedown", () => {
       document.getElementById("hiddenText").style.color = "white";
       document.getElementById("answerBox").style.display = "block";
     });
 
-    // Check user's answer
     function checkAnswer() {
-      const correct = "harley quinn";  // lowercased answer
-      const userAnswer = document.getElementById("answer").value.trim().toLowerCase();
+      const correct = "harley quinn";  // Use lowercase for comparison
+      const userAnswer = document.getElementById("answer").value.toLowerCase();
       if (userAnswer === correct) {
         document.getElementById("result").innerHTML = "Well done! <b>flag{joker_catch3d_you}</b>";
       } else {
         document.getElementById("result").textContent = "Wrong! Try again.";
       }
     }
-
-    // Connect the button to the checkAnswer function
-    document.getElementById("submitBtn").addEventListener("click", checkAnswer);
   </script>
 
-  <!-- MD5 of the answer: 9f3a1fa57010b35a96cb046ed1efb21f -->
+  <!-- md5(answer): 9f3a1fa57010b35a96cb046ed1efb21f -->
 </body>
 </html>
