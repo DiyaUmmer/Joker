@@ -64,8 +64,48 @@
       });
     });
   </script>
+  
+<head>
+  <meta charset="UTF-8" />
+  <title>Hidden Image Example</title>
+  <style>
+    #hiddenHint {
+      display: none;  /* Hide the image initially */
+      width: 300px;
+      height: auto;
+      margin: 20px auto;
+      cursor: pointer;
+    }
+    #hintTrigger {
+      cursor: pointer;
+      font-size: 24px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
 
-  <!-- Real Hint Hidden in Image -->
-  <!-- <a src="C:\Users\DIYA\OneDrive\Documents\CTF\JOKER_CTF\images" /> -->
+  <h2>Click the question mark to reveal the hint</h2>
+  <p id="hintTrigger">❓</p>
+
+  <!-- Normal image file (put your image inside your images folder) -->
+  <img id="hiddenHint" src="images/hint.png" alt="Hidden Hint" />
+
+  <script>
+    const trigger = document.getElementById('hintTrigger');
+    const hiddenHint = document.getElementById('hiddenHint');
+
+    trigger.addEventListener('click', () => {
+      if (hiddenHint.style.display === "none") {
+        hiddenHint.style.display = "block";
+      } else {
+        hiddenHint.style.display = "none";
+      }
+    });
+  </script>
+
 </body>
 </html>
+ 
+
+
