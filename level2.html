@@ -44,17 +44,17 @@
     });
 
     function checkAnswer() {
-      const correct = "Harley Quinn";
-      const userAnswer = document.getElementById("answer").value.toLowerCase();
+      const correct = "harley quinn"; // Lowercased version
+      const userAnswer = document.getElementById("answer").value.trim().toLowerCase();
       if (userAnswer === correct) {
-        document.getElementById("result").innerHTML = "Well done! <b>flag{joker_</b>";
+        document.getElementById("result").innerHTML = "Well done! <b>flag{joker_catch3d_you}</b>";
       } else {
         document.getElementById("result").textContent = "Wrong! Try again.";
       }
     }
   </script>
 
-  <!--  Final part of flag -->
-  <!-- Second Half: catch3d_you} -->
+  <!-- Hidden Hint -->
+  <!-- Final flag: flag{joker_catch3d_you} -->
 </body>
 </html>
