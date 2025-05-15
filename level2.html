@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Level 2 - Now You See Me</title>
+  <style>
+    body {
+      background: #000;
+      color: #000;
+      font-family: monospace;
+      user-select: none;
+    }
+    #hiddenText {
+      position: absolute;
+      top: 200px;
+      left: 50px;
+      color: black;
+      background-color: black;
+    }
+    #answerBox {
+      display: none;
+      margin-top: 300px;
+      text-align: center;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div id="hiddenText">I forgot my sweetheart's name. Do you remember that</div>
+
+  <div id="answerBox">
+    <input type="text" id="answer" placeholder="Type your answer here..." />
+    <button onclick="checkAnswer()">Submit</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    document.body.addEventListener("mousedown", () => {
+      document.getElementById("hiddenText").style.color = "white";
+      document.getElementById("answerBox").style.display = "block";
+    });
+
+    function checkAnswer() {
+      const correct = "Harley Quinn";
+      const userAnswer = document.getElementById("answer").value.toLowerCase();
+      if (userAnswer === correct) {
+        document.getElementById("result").innerHTML = "Well done! <b>flag{joker_</b>";
+      } else {
+        document.getElementById("result").textContent = "Wrong! Try again.";
+      }
+    }
+  </script>
+
+  <!--  Final part of flag -->
+  <!-- Second Half: catch3d_you} -->
+</body>
+</html>
